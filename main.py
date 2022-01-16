@@ -3,7 +3,7 @@ from model import Model
 from solver import Solver
 from utils import *
 
-RANDOM_SEED = 0
+RANDOM_SEED = 1
 INPUT_DIM = 3
 HIDDEN_DIM = 2
 if __name__ == '__main__':

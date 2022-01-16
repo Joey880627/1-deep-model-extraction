@@ -22,7 +22,7 @@ class Solver:
         print("---- Start finding critical points")
         iteration = 0
         while len(self.first_layer_weights) < self.hidden_dim:
-            print(f"------ Iteration {iteration}, {len(self.critical_points)} critical points found", end='\r')
+            print(f"------ Iteration {iteration}, {len(self.critical_points)} critical points found")
             iteration += 1
             self._find_critical_points(start=10*np.random.randn(self.input_dim), end=10*np.random.randn(self.input_dim))
         print(f"---- Finished, {len(self.critical_points)} critical points found")
