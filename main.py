@@ -17,7 +17,7 @@ if __name__ == '__main__':
     print("Steal model:")
     print(steal_model)
     
-    # Validate results
+    # Validate final results
     DATA_NUM = 1000
     random_input = solver._input_generator(DATA_NUM)
     error = 0.0

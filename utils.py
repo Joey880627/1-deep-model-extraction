@@ -11,7 +11,6 @@ def differential(function, x, d=1e-6):
         dk = np.zeros(x.shape)
         dk[k] = d
         x_plus_dk = x + dk
-        #print(x_plus_dk)
         y_plus_dy = function(x_plus_dk)
         ret.append((y_plus_dy - y) / d)
     return np.array(ret)
@@ -28,12 +27,11 @@ def second_differential(function, x, d=1e-6):
         ret.append(second_diff)
     return np.array(ret)
 
-"""
-This function will not be used in solving the n-dim function
-This is only a prototype of partial derivative d2f/dxdy
-"""
 def differential_dxdy(function, x, d=1e-6):
-    
+    """
+    This function will not be used in solving the n-dim function
+    This is only a prototype of partial derivative d2f/dxdy
+    """
     assert x.shape[0] == 2, "This function only supports input dimension of 2"
     pp = function(x+np.array([d, d]))
     pm = function(x+np.array([d, -d]))

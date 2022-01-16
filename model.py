@@ -12,16 +12,11 @@ class Model:
         else:
             self.weights = [np.random.randn(self.input_dim, self.hidden_dim), np.random.randn(self.hidden_dim)]
             self.bias = [np.random.randn(self.hidden_dim), np.random.randn(1)]
-            # Temp weights and bias for debugging
-            #self.weights = [np.arange(1,self.input_dim*self.hidden_dim+1).reshape(self.input_dim, self.hidden_dim), np.ones(self.hidden_dim)]
-            #self.weights = [np.array([[-12, -3],[13, -4], [5, 1]]), np.array([1., -1.])]
-            #self.bias = [np.array([1.62434536, -0.61175641]), np.array([-0.52817175])]
         
     def forward(self, x):
         assert x.shape == (self.input_dim,), f"Expected data dimension: ({self.input_dim},), found {x.shape}"
         # Input -> Hidden
         hidden_representation = relu(self.weights[0].T @ x + self.bias[0])
-        # print("Hidden:", hidden_representation)
         # Hidden -> Output
         output = self.weights[1].T @ hidden_representation + self.bias[1]
         return output.item()
