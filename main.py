@@ -4,8 +4,8 @@ from solver import Solver
 from utils import *
 
 RANDOM_SEED = 0
-INPUT_DIM = 10
-HIDDEN_DIM = 3
+INPUT_DIM = 3
+HIDDEN_DIM = 2
 if __name__ == '__main__':
     np.random.seed(RANDOM_SEED)
     model = Model(INPUT_DIM, HIDDEN_DIM)
